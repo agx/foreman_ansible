@@ -213,6 +213,9 @@ class CallbackModule(parent_class):
         self.send_reports(stats)
 
     # v2 callback API
+    def v2_playbook_on_stats(self, stats):
+        self.send_reports(stats)
+
     def v2_runner_on_ok(self, result):
         res = result._result
         host = result._host.get_name()
